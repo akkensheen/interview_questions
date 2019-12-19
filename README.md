@@ -153,7 +153,7 @@ What is the difference between docker image and container?
 What are layers?  
 Can layers be writeble?  
 What types of Storage Drivers you now? What's the differens  
-How can you check overoll docke config?  
+How can you check overall docker config?  
 What steps you have to take in order to configure network interaction between containers with names?  
 
 **MySQL**  
