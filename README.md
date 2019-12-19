@@ -86,20 +86,20 @@ What is ARP/DNS/DHCP and what is it used for?
 Как разрешить доступ к сайту с определенных ip адресов?  
 Как подключить сетевую папку к сайту?  
 
-**Linux**
-*Simple*
+**Linux**  
+*Simple*  
 What command you can use in order to check utilization?  
 What is the name and the UID of the administrator user?  
 What Unix/Linux commands will alter a files ownership, files permissions?  
 What does chmod +x FILENAME do?  
 What does the permission 0750 on a file/directory  mean?  
 Walk me through the steps in booting into single user mode to troubleshoot a problem.  
-*Medium*
+*Medium*  
 What is the difference between & / &&  
 What is the sticky bit?  
 Describe a scenario when you get a "filesystem is full" error, but 'df' shows there is free space.  
 Describe a scenario when deleting a file, but 'df' not showing the space being freed.  
-*Hard*
+*Hard*  
 What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?  
 I've added my public ssh key into authorized_keys but I'm still getting a password prompt, what can be wrong?  
 
