@@ -1,107 +1,107 @@
 **PS**
 
-Какой результат выполнения команды `get-command | get-member`
+Какой результат выполнения команды `get-command | get-member`  
 Разница `Remove-ADUser` и `Disable-ADAccount`.
 ```
-Get-WmiObject Win32_share -Property * | ? Name -NotLike "*$" | select Name,Path 
-$date90=(Get-Date).AddDays(-90) 
+Get-WmiObject Win32_share -Property * | ? Name -NotLike "*$" | select Name,Path  
+$date90=(Get-Date).AddDays(-90)
 ```
 ```
 Get-ADUser -Filter {(LastLogonDate -le $date90)} -Properties LastLogonDate,employeetype | ? { $_.distinguishedname -notmatch 'DismissedUsers' }
 ```
 **AD**
 Роли FSMO в Active Directory:
-> Schema master. (F)
-> Domain naming master. (F)
-> RID master.
-> PDC emulator.
-> Infrastructure master
+> Schema master. (F)  
+> Domain naming master. (F)  
+> RID master.  
+> PDC emulator.  
+> Infrastructure master  
 
-Как работает RID мастер?
-Как происходит процесс поиска контроллера домена после включения компьютера?
-Можно ли авторизоваться на рабочей станции, если контроллер домена стал недоступен?
-Восстановление объектов в AD?
-Где хранятся GPO:
-> GPC class groupPolicyContainer System\Policies
-> GPT SYSVOL \<domainname>\Policies
+Как работает RID мастер?  
+Как происходит процесс поиска контроллера домена после включения компьютера?  
+Можно ли авторизоваться на рабочей станции, если контроллер домена стал недоступен?  
+Восстановление объектов в AD?  
+Где хранятся GPO:  
+> GPC class groupPolicyContainer System\Policies  
+> GPT SYSVOL \<domainname>\Policies  
 
-Порядок применения групповых политик?
-Как ограничить GPO на определенный круг пользователей/компьютеров?
+Порядок применения групповых политик?  
+Как ограничить GPO на определенный круг пользователей/компьютеров?  
 
 **Виртуализация**
-Какого цвета экран смерти в ESXi?
-Восстановление рабочей конфигурации ESXi при неудачном обновлении.
-Типы дисков для ВМ, их отличия.
-Балансировка автоматом по хранилищам/хостам.
-Отличие vDS и vSS.
-Возможна ли миграция ВМ между хостами без общего стораджа?
-Технологии отказоустойчивости в VMware.
-Что такое affinity rule?
-Как понизить версию виртуального железа?
+Какого цвета экран смерти в ESXi?  
+Восстановление рабочей конфигурации ESXi при неудачном обновлении.  
+Типы дисков для ВМ, их отличия.  
+Балансировка автоматом по хранилищам/хостам.  
+Отличие vDS и vSS.  
+Возможна ли миграция ВМ между хостами без общего стораджа?  
+Технологии отказоустойчивости в VMware.  
+Что такое affinity rule?  
+Как понизить версию виртуального железа?  
 
 **Сеть**
-Принципиальное отличие протоколов udp/tcp.
-Можно ли на один хост назначить несколько ip-адресов.
-Отображение конфигурации коммутатора Cisco.
-> show run
-> show run-config
+Принципиальное отличие протоколов udp/tcp.  
+Можно ли на один хост назначить несколько ip-адресов.  
+Отображение конфигурации коммутатора Cisco.  
+> show run  
+> show run-config  
 
-Отличие access и trunk.
-Какие параметры можно передать с помощью протокола dhcp?
-Как обеспечить отказоустойчивость сервиса DHCP?
-What is ARP/DNS/DHCP and what is it used for?
+Отличие access и trunk.  
+Какие параметры можно передать с помощью протокола dhcp?  
+Как обеспечить отказоустойчивость сервиса DHCP?  
+What is ARP/DNS/DHCP and what is it used for?  
 
 **Файловые сервера Windows**
-Автоматизация подключения файловых ресурсов, способы?
-Как назначить квоту на сетевую папку?
-Как запретить сохранение исполняемых файлов в сетевой папке?
-Заменяют ли теневые копии резервное копирование?
-Можно ли настроить сохранение теневых копий на выделенный том?
+Автоматизация подключения файловых ресурсов, способы?  
+Как назначить квоту на сетевую папку?  
+Как запретить сохранение исполняемых файлов в сетевой папке?  
+Заменяют ли теневые копии резервное копирование?  
+Можно ли настроить сохранение теневых копий на выделенный том?  
 
 **Exchange**
-Роли Exchange 2010/2013, способы обеспечения отказоустойчивости каждой из ролей.
-Для чего нужен quorum?
-По каким портам и протоколам почтовые клиенты могут подключаться к серверу Exchange 2010/2013?
-Как подключить МФУ/сетевой сканер к почтовому серверу для отправки отсканированных документов?
-Как включить openrelay для конкретного клиента?
-В чем отличие записей example.com. IN TXT "v=spf1 mx -all" и example.com. IN TXT "v=spf1 mx ~all"; для чего нужен этот тип записей?
+Роли Exchange 2010/2013, способы обеспечения отказоустойчивости каждой из ролей.  
+Для чего нужен quorum?  
+По каким портам и протоколам почтовые клиенты могут подключаться к серверу Exchange 2010/2013?  
+Как подключить МФУ/сетевой сканер к почтовому серверу для отправки отсканированных документов?  
+Как включить openrelay для конкретного клиента?  
+В чем отличие записей example.com. IN TXT "v=spf1 mx -all" и example.com. IN TXT "v=spf1 mx ~all"; для чего нужен этот тип записей?  
 
 **SQL**
-Какие редакции SQL существуют, в чем основные отличия?
-Типы моделей восстановления в SQL, их предназначение и отличия.
-Чем отличается резервное копирование базы данных от резервного копирования журнала транзакций?
-Как предоставить доступ к базе данных служебной учетной записи?
-Что такое снимок базы данных, как работает?
-Способы обеспечения отказоустойчивости SQL.
+Какие редакции SQL существуют, в чем основные отличия?  
+Типы моделей восстановления в SQL, их предназначение и отличия.  
+Чем отличается резервное копирование базы данных от резервного копирования журнала транзакций?  
+Как предоставить доступ к базе данных служебной учетной записи?  
+Что такое снимок базы данных, как работает?  
+Способы обеспечения отказоустойчивости SQL.  
 
 **Sharepoint**
-Как назначить квоту на сайт в Sharepoint?
-Как внести изменения в master-page для конкретного сайта?
-Что такое режим обслуживание веб-частей в Sharepoint?
-На каком уровне можно назначать разрешения в sharepoint?
+Как назначить квоту на сайт в Sharepoint?  
+Как внести изменения в master-page для конкретного сайта?  
+Что такое режим обслуживание веб-частей в Sharepoint?  
+На каком уровне можно назначать разрешения в sharepoint?  
 
 **IIS**
-Что такое Application Pool
-Как предоставить доступ к сайту определенной группе безопасности?
-Как разрешить доступ к сайту с определенных ip адресов?
-Как подключить сетевую папку к сайту?
+Что такое Application Pool  
+Как предоставить доступ к сайту определенной группе безопасности?  
+Как разрешить доступ к сайту с определенных ip адресов?  
+Как подключить сетевую папку к сайту?  
 
 **Linux**
 *Simple*
-What command you can use in order to check utilization?
-What is the name and the UID of the administrator user?
-What Unix/Linux commands will alter a files ownership, files permissions?
-What does chmod +x FILENAME do?
-What does the permission 0750 on a file/directory  mean?
-Walk me through the steps in booting into single user mode to troubleshoot a problem.
+What command you can use in order to check utilization?  
+What is the name and the UID of the administrator user?  
+What Unix/Linux commands will alter a files ownership, files permissions?  
+What does chmod +x FILENAME do?  
+What does the permission 0750 on a file/directory  mean?  
+Walk me through the steps in booting into single user mode to troubleshoot a problem.  
 *Medium*
-What is the difference between & / &&
-What is the sticky bit?
-Describe a scenario when you get a "filesystem is full" error, but 'df' shows there is free space.
-Describe a scenario when deleting a file, but 'df' not showing the space being freed.
+What is the difference between & / &&  
+What is the sticky bit?  
+Describe a scenario when you get a "filesystem is full" error, but 'df' shows there is free space.  
+Describe a scenario when deleting a file, but 'df' not showing the space being freed.  
 *Hard*
-What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?
-I've added my public ssh key into authorized_keys but I'm still getting a password prompt, what can be wrong?
+What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?  
+I've added my public ssh key into authorized_keys but I'm still getting a password prompt, what can be wrong?  
 
 **bash**
 ```
@@ -129,8 +129,8 @@ curl https://github.com/docker/compose/tags -o tags.html \
 ```
 
 **Docker**
-как посмотреть командры сформировавшие образ без докер файла?
-как посмотреть логи контейнера?
+как посмотреть командры сформировавшие образ без докер файла?  
+как посмотреть логи контейнера?  
 ```
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
 6166f9cce87f        2 months ago        /bin/sh -c #(nop)  CMD ["/bin/sh" "-c" "nohu…   0B
@@ -150,18 +150,18 @@ bbb22ef2347f        2 months ago        /bin/sh -c #(nop) COPY dir:79d33550593d3
 <missing>           12 months ago       /bin/sh -c #(nop)  LABEL org.label-schema.sc…   0B
 <missing>           12 months ago       /bin/sh -c #(nop) ADD file:6f877549795f4798a…   202MB
 ```
-What is the difference between docker image and container?
-What is layers?
-Can layers be writeble?
-What types of Storage Drivers you now? What's the differens
-How can you check overoll docke config?
-What steps you have to take in order to configure network interaction between containers with names?
+What is the difference between docker image and container?  
+What is layers?  
+Can layers be writeble?  
+What types of Storage Drivers you now? What's the differens  
+How can you check overoll docke config?  
+What steps you have to take in order to configure network interaction between containers with names?  
 
 **MySQL**
-How do you create a user?
-What is the difference between a "left" and a "right" join?
-How do you check which jobs are running?
-How would you take a backup of a MySQL database?
+How do you create a user?  
+What is the difference between a "left" and a "right" join?  
+How do you check which jobs are running?  
+How would you take a backup of a MySQL database?  
 
 **Python**
 ```
@@ -189,7 +189,7 @@ print(json_response['authorizations_url'])
 ```
 
 **Other**
-What is GIT?
-What is a dynamically/statically linked file?
-What is the difference between Containers and VMs?
-What are the important aspects of a system of continuous integration and deployment?
+What is GIT?  
+What is a dynamically/statically linked file?  
+What is the difference between Containers and VMs?  
+What are the important aspects of a system of continuous integration and deployment?  
