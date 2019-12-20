@@ -100,7 +100,7 @@ Describe a scenario when you get a "filesystem is full" error, but 'df' shows th
 Describe a scenario when deleting a file, but 'df' not showing the space being freed.  
 *Hard*  
 What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?  
-I've added my public ssh key into authorized_keys but I'm still getting a password prompt, what can be wrong?  
+I've added my public ssh key into authorized_keys but I'm still getting a password prompt, what can be wrong? (add question for specific case for example 0750)  
 
 **bash**  
 ```
@@ -149,6 +149,25 @@ bbb22ef2347f        2 months ago        /bin/sh -c #(nop) COPY dir:79d33550593d3
 <missing>           12 months ago       /bin/sh -c #(nop)  LABEL org.label-schema.sc…   0B
 <missing>           12 months ago       /bin/sh -c #(nop) ADD file:6f877549795f4798a…   202MB
 ```
+```
+FROM ubuntu
+
+RUN apt update && apt install -y --no-install-recommends \
+        unzip \
+        curl
+
+WORKDIR /terraform
+
+ARG version=0.12.0
+RUN curl -k https://releases.hashicorp.com/terraform/${version}/terraform_${version}_linux_amd64.zip -o terraform_${version}_linux_amd64.zip
+RUN unzip terraform_${version}_linux_amd64.zip
+RUN ln -s ${PWD}/terraform /usr/local/bin/terraform
+RUN terraform -v
+
+RUN rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT [ "terraform" ]
+```
 What is the difference between docker image and container?  
 What are layers?  
 Can layers be writeble?  
@@ -186,6 +205,11 @@ response = requests.get('https://api.github.com')
 json_response = response.json()
 print(json_response['authorizations_url'])
 ```
+
+**Terraform**
+Why do you use modules?
+What's the differens between ansible and terraform?
+How can you configure infrastructure in a team?
 
 **Other**  
 What is GIT?  
