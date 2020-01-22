@@ -207,9 +207,9 @@ print(json_response['authorizations_url'])
 ```
 
 **Terraform**
-Why do you use modules?
-What's the differens between ansible and terraform?
-How can you configure infrastructure in a team?
+Why do you use modules?  
+What's the difference between ansible and terraform?  
+How can you configure infrastructure in a team?  
 
 **Other**  
 What is GIT?  
